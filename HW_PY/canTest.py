@@ -1,5 +1,5 @@
 
-import base64
+import canopen
 import can
 
 
