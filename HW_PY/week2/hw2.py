@@ -4,10 +4,11 @@
 # andrew id: 2112103397
 #################################################
 
-from http.client import SWITCHING_PROTOCOLS
-from unicodedata import digit
+from platform import win32_edition
+import random
 import cs112_f22_week2_linter
 import math
+
 
 #################################################
 # Helper functions
@@ -34,16 +35,39 @@ def isPrime(n):
     return True
 
 def countOccurrences(x, d):
-    count = 0; # Initialize count
-               # of digit d
+    count = 0; 
     while (x):
-         
-        # Increment count if current
-        # digit is same as d
         if (x % 10 == d):
-            count += 1;
-        x = int(x / 10);
-    return count;
+            count += 1
+        x = int(x / 10)
+    return count
+
+def countConsec(x,d):
+    count = 0
+    if (x % 10 == d):
+        count += 1
+        state = -1
+    elif(x % 10 !=d):
+        state = -2
+    x = int(x / 10)
+    while (x != 0):
+        if(state == -1):
+            if(x % 10 == d):
+                state = -1
+                count += 1
+                x = int(x / 10)
+            else:
+                state = -2
+                x = int(x / 10)
+        elif(state == -2):
+            if(x % 10 == d):
+                state = -1
+                count = 1
+                x = int(x / 10)
+            else:
+                state = -2
+                x = int(x / 10)
+    return count
 
 
 #################################################
@@ -106,17 +130,98 @@ def mostFrequentDigit(n):
             max_count = count
             result = d
     return result
+    
 def findZeroWithBisection(f, x0, x1, epsilon):
-    return 42
+    while((x1-x0) > epsilon):
+        if(f(x0) == 0):
+            return x0
+        elif(f(x1) == 0):
+            return x1
+        elif((f(x0)<0 and f(x1)<0) or (f(x0)>0 and f(x1)>0)):
+            return None
+        elif((f(x0)<0 and f(x1)>0) or (f(x0)>0 and f(x1)<0)):
+            Xmid = (x1+x0)/2
+            if(f(Xmid) == 0):
+                return Xmid
+            elif((f(x0)<0 and f(Xmid)>0) or (f(x0)>0 and f(Xmid)<0)):
+                x1 = Xmid
+            elif((f(x1)<0 and f(Xmid)>0) or (f(x1)>0 and f(Xmid)<0)):
+                x0 = Xmid
+    return (x1+x0)/2
 
 def carrylessAdd(x, y):
-    return 42
+    sum = 0
+    i = 0
+    while(x!=0 or y!=0):
+        sum += ((x%10 + y%10) % 10)*10**i
+        i += 1
+        x //= 10
+        y //= 10
+    return sum
 
 def longestDigitRun(n):
-    return 42
+    n = abs(n)
+    longest = 0
+    for d in range(9,-1,-1):
+        if(longest <= countConsec(n , d)):
+            longest = countConsec(n ,d)
+            longestDigit  = d
+    return longestDigit
 
 def playPig():
-    return 42
+    Player1_Score = 0
+    Player2_Score = 0
+    round_score = 0 
+    print("Welcome to Game ")
+    print("choose which player frist to start!")
+    playerState = input("input \"P1\",\"P2\" which to start: ")
+
+    while(Player1_Score < 100 and Player1_Score < 100):
+        if(playerState.upper() == "P1"):
+            print("player 1 start to choose")
+            playerState = input(" input 1 to toss, 2 to keep : ")
+        elif(playerState == '1' ):
+            s = random.randint(1,6)
+            print(f"your toss score : {s}")
+            round_score += s 
+            if(s == 1):
+                round_score = 0
+                playerState = 'P2'
+                print("the round Score is 0 ")
+                print(f"end!your current score is {Player1_Score}")
+            else:
+                playerState = input(" again! input 1 to toss, 2 to keep : ")
+        elif(playerState == '2'):
+            Player1_Score += round_score
+            print(f"your round score is {round_score}")
+            print(f"your current all score is {Player1_Score}")
+            round_score =0
+            playerState = 'P2'
+        elif(playerState.upper() == "P2"):
+            print("player 2 start to choose")
+            playerState = input("input 3 to toss, 4 to keep : ")
+        elif(playerState == '3' ):
+            s = random.randint(1,6)
+            print(f"your toss score : {s}")
+            round_score += s 
+            if(s == 1):
+                round_score = 0
+                playerState = 'P1'
+                print("the round Score is 0 ")
+                print(f"end!your current score is {Player2_Score}")
+            else:
+                playerState = input("again! input 3 to toss, 4 to keep : ")
+        elif(playerState == '4'):
+            Player2_Score += round_score
+            print(f"your round score is {round_score}")
+            print(f"your current all score is {Player2_Score}")
+            round_score =0
+            playerState = 'P1'
+    if(Player1_Score >= 100):
+        print("Player one  win")
+    else:
+        print("Player Two  win")
+    return 0
 
 #################################################
 # Bonus/Optional
@@ -453,10 +558,10 @@ def testAll():
     testIsPalindromicNumber()
     testNthPalindromicPrime()   
     testMostFrequentDigit()
-    # testFindZeroWithBisection()
-    # testCarrylessAdd()
-    # testLongestDigitRun()
-    # testPlayPig()
+    testFindZeroWithBisection()
+    testCarrylessAdd()
+    testLongestDigitRun()
+    testPlayPig()
 
     # Bonus:
     # testBonusCarrylessMultiply()
