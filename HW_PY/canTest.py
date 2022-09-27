@@ -41,4 +41,3 @@ def receive_all():
 
 if __name__ == "__main__":
     sendDate()
-    receive_all()
