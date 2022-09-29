@@ -1,0 +1,9 @@
+[1000]
+ParameterName=Device Type
+ObjectType=0x7
+DataType=0x7
+AccessType=ro
+DefaultValue=0x0
+PDOMapping=0
+LowLimit=0x0
+HighLimit=0xFF

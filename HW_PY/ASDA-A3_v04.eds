@@ -1497,6 +1497,7 @@ ObjectType=7
 DataType=0x0004
 AccessType=rw
 PDOMapping=1
+ParameterValue=0x4E20
 
 [607C]
 ParameterName=Home offset
