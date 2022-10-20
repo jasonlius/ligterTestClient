@@ -5,7 +5,7 @@ import time
 import sys
 
 network = canopen.Network()
-network.connect(bustype='slcan', channel='/dev/cu.usbmodem143201', bitrate=250000)
+network.connect(bustype='slcan', channel='/dev/cu.usbmodem143101', bitrate=250000)
 max_node = 0x7F
 list = []
 def find_node():

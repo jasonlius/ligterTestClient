@@ -27,6 +27,11 @@ def roundHalfUp(d): #helper-fn
 def rgbString(red, green, blue):
      return f'#{red:02x}{green:02x}{blue:02x}'
 
+def GetCharInStr(s, index):
+    l = len(s)
+    if (index >= l):
+        index %= l 
+    return s[index]
 #################################################
 # Functions for you to write
 #################################################
@@ -110,13 +115,104 @@ def largestNumber(s):
         return None
 
 def topScorer(data):
-    return 42
+    if data == '':
+        return None
+    else:
+        topScore = 0
+        currentScore = 0
+        output = ""
+        playerInfoList = data.splitlines()
+        winners = data.splitlines()
+        for playerInfo in playerInfoList:
+            playerDetails = playerInfo.split(',')
+            for detail in playerDetails:
+                if(detail.isdigit()):
+                    currentScore += int(detail)
+                else:
+                    player = detail
+            if(topScore < currentScore):
+                topScore = currentScore
+                currentScore = 0
+                winners.clear()
+                winners.append(player)
+            elif(topScore == currentScore):
+                winners.append(player)
+                currentScore = 0
+        for winner in  winners:
+            output = output+winner+','
+        return output[:-1]
 
 def collapseWhitespace(s):
-    return 42
+    state = "entry"
+    output = ''
+    for character in s:
+        if state == 'entry':
+            if(character == ' ' or character == '\n' or character == '\t'):
+                state = 'whiteSpace'
+                output += ' '
+                continue
+            else:
+                state = 'character'
+                output += character
+                continue
+        if state == 'whiteSpace':
+            if(character == ' ' or character == '\n' or character == '\t'):
+                state = 'whiteSpace'
+                continue
+            else:
+                state = 'character'
+                output += character
+                continue
+        if state == 'character':
+            if(character == ' ' or character == '\n' or character == '\t'):
+                state = 'whiteSpace'
+                output += ' '
+                continue
+            else:
+                state = 'character'
+                output += character
+                continue
+    return output
 
 def patternedMessage(message, pattern):
-    return 42
+    output = ''
+    pattern = pattern.strip('\n')
+    message = message.replace(' ','')
+    state = 'entry'
+    strIndex = 0
+    for character in pattern:
+        if state == 'entry':
+            if(character == ' ' or character == '\n' or character == '\t'):
+                state = 'whiteSpace'
+                output += character
+                continue
+            else:
+                state = 'character'
+                output += GetCharInStr(message,strIndex) 
+                strIndex += 1
+                continue
+        if state == 'whiteSpace':
+            if(character == ' ' or character == '\n' or character == '\t'):
+                state = 'whiteSpace'
+                output += character
+                continue
+            else:
+                state = 'character'
+                output += GetCharInStr(message,strIndex) 
+                strIndex += 1
+                continue
+        if state == 'character':
+                if(character == ' ' or character == '\n' or character == '\t'):
+                    state = 'whiteSpace'
+                    output += character
+                    continue
+                else:
+                    state = 'character'
+                    output += GetCharInStr(message,strIndex) 
+                    strIndex += 1
+                    continue
+    return output
+
 
 def mastermindScore(target, guess):
     return 42
@@ -184,14 +280,14 @@ def testRotateStringLeft():
 
 def testApplyCaesarCipher():
     print("Testing applyCaesarCipher()...", end="")
-    # assert(applyCaesarCipher("abcdefghijklmnopqrstuvwxyz", 3) ==
-    #                          "defghijklmnopqrstuvwxyzabc")
-    # assert(applyCaesarCipher("We Attack At Dawn", 1) == "Xf Buubdl Bu Ebxo")
-    # assert(applyCaesarCipher("1234", 6) == "1234")
-    # assert(applyCaesarCipher("abcdefghijklmnopqrstuvwxyz", 25) ==
-    #                          "zabcdefghijklmnopqrstuvwxy")
-    # assert(applyCaesarCipher("We Attack At Dawn", 2)  == "Yg Cvvcem Cv Fcyp")
-    # assert(applyCaesarCipher("We Attack At Dawn", 4)  == "Ai Exxego Ex Hear")
+    assert(applyCaesarCipher("abcdefghijklmnopqrstuvwxyz", 3) ==
+                             "defghijklmnopqrstuvwxyzabc")
+    assert(applyCaesarCipher("We Attack At Dawn", 1) == "Xf Buubdl Bu Ebxo")
+    assert(applyCaesarCipher("1234", 6) == "1234")
+    assert(applyCaesarCipher("abcdefghijklmnopqrstuvwxyz", 25) ==
+                             "zabcdefghijklmnopqrstuvwxy")
+    assert(applyCaesarCipher("We Attack At Dawn", 2)  == "Yg Cvvcem Cv Fcyp")
+    assert(applyCaesarCipher("We Attack At Dawn", 4)  == "Ai Exxego Ex Hear")
     assert(applyCaesarCipher("We Attack At Dawn", -1) == "Vd Zsszbj Zs Czvm")
     # And now, the whole point...
     assert(applyCaesarCipher(applyCaesarCipher('This is Great', 25), -25)
@@ -532,9 +628,9 @@ def testAll():
     testRotateStringLeft()
     testApplyCaesarCipher()
     testLargestNumber()
-    # testTopScorer()
-    # testCollapseWhitespace()
-    # testPatternedMessage()
+    testTopScorer()
+    testCollapseWhitespace()
+    testPatternedMessage()
     # testMastermindScore()
 
     # Test all Graphics:
