@@ -572,7 +572,7 @@ AccessType=rw
 DefaultValue=0
 PDOMapping=0
 
-[1601sub1]
+[   sub1]
 ParameterName=PDO mapping 1
 ObjectType=7
 DataType=0x0007

@@ -47,15 +47,15 @@ def nodeConfig():
 
 def deltaMotorTest():
     network = canopen.Network()
-    network.connect(bustype='slcan', channel='/dev/tty.usbmodem143101', bitrate=250000)
+    network.connect(bustype='slcan', channel='/dev/tty.usbmodem143301', bitrate=250000)
     deltaMotorNode = network.add_node(1,'/Users/mac/tmp/HW_PY/ASDA-A3_v04.eds')
     deltaMotorNode.nmt.state = 'OPERATIONAL'
     deltaMotorNode.sdo[0x6040].write(0x00)
     deltaMotorNode.sdo[0x6040].write(0x80)
     deltaMotorNode.sdo[0x6040].write(0x00)
     deltaMotorNode.sdo[0x6060].write(0x01)
-    deltaMotorNode.sdo[0x607A].write(-100000000)
-    deltaMotorNode.sdo[0x6081].write(2000000)
+    deltaMotorNode.sdo[0x607A].write(100000000)
+    deltaMotorNode.sdo[0x6081].write(4000000)
     deltaMotorNode.sdo[0x6040].write(0)
     deltaMotorNode.sdo[0x6040].write(0x06)
     deltaMotorNode.sdo[0x6040].write(0x07)
