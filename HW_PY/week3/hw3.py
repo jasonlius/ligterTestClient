@@ -1,9 +1,10 @@
 #################################################
 # hw3.py
-# name:
-# andrew id:
+# name: jason,L.
+# andrew id:2112103397
 #################################################
 
+from textwrap import fill
 import cs112_f22_week3_linter
 import math
 from cmu_112_graphics import *
@@ -215,10 +216,48 @@ def patternedMessage(message, pattern):
 
 
 def mastermindScore(target, guess):
-    return 42
+    Ematch = 0
+    Pmatch = 0
+    l = len(target)
+    for i in range(l):
+        if( target[i] == guess[i]):
+            Ematch += 1
+            target = target.replace(target[i],' ',1)
+            guess = guess.replace(guess[i],' ',1)
+        i += 1
+    target = target.replace(' ','')
+    guess = guess.replace(' ','')
+    for ch in guess:
+        if ch in target:
+            Pmatch += 1
+            target = target.replace(ch,'')
+            guess = guess.replace(ch,'')
+    if(Ematch == l):
+        return 'You win!!!'
+    else:
+        if(Ematch != 0 and Pmatch == 0):
+            if(Ematch > 1):
+                return f'{Ematch} exact matches'
+            else:
+                return f'{Ematch} exact match'
+        elif(Ematch == 0 and Pmatch != 0):
+            if(Pmatch > 1):
+                return f'{Pmatch} partial matches'
+            else:
+                return f'{Pmatch} partial match'
+        elif(Ematch != 0 and Pmatch != 0):
+            if(Ematch > 1 and Pmatch > 1):
+                return f'{Ematch} exact matches, {Pmatch} partial matches'
+            if(Ematch > 1 and Pmatch == 1):
+                return f'{Ematch} exact matches, {Pmatch} partial match' 
+            if(Ematch == 1 and Pmatch > 1):
+                return f'{Ematch} exact match, {Pmatch} partial matches'
+            else:
+                return f'{Ematch} exact match, {Pmatch} partial match'
+        else:
+            return 'No matches'
 
-
-
+    
 #################################################
 # Graphics functions for you to write
 #################################################
@@ -231,18 +270,53 @@ def mastermindScore(target, guess):
 
 def drawFlagOfTheEU(canvas, x0, y0, x1, y1):
     # You may delete starter code in this function
-    canvas.create_rectangle(x0, y0, x1, y1, fill='yellow', outline='black')
-    size = (x1 - x0) // 12
-    canvas.create_text((x0 + x1)/2, (y0 + y1)/2, fill='black',
-                       text='Draw the EU flag here!', font=f'Arial {size} bold')
+    (cx,cy,r) = ((x0+x1)/2,(y0+y1)/2,(y1-y0)/2*7/8)
+    canvas.create_rectangle(x0, y0, x1, y1, fill='blue')
+    canvas.create_text((x0+x1)/2,y0-15, text='European Union',
+                       fill='black', font='Arial 20 bold')
+    for cicle in range(12):
+        circleAngle = math.pi/2 - (math.pi*2)*(cicle/12)
+        cicleX = cx + r * math.cos(circleAngle)
+        cicleY = cy - r * math.sin(circleAngle)
+        label = str(cicle if (cicle > 0) else 12)
+        canvas.create_oval(cicleX-r/8, cicleY-r/8, cicleX+r/8, cicleY+r/8,
+        fill='yellow',outline='black')
     # Your code goes here!
 
 def drawNiceRobot(canvas, width, height):
     # You may delete starter code in this function
-    canvas.create_rectangle(0, 0, width, height, fill='yellow', outline='black')
-    canvas.create_text(width/2, height/2, fill='black',
-                       text='Draw a nice robot here!',
-                       font='Arial 20 bold')
+    canvas.create_rectangle(0, 0, width, height, fill='white', outline='black')
+    canvas.create_rectangle(4*width/9,2*height/9,5*width/9,3*height/9,
+    fill='#ff4500', outline='black',width=4)
+    canvas.create_line(4.5*width/9, 2*height/9, 
+    4.5*width/9, 1.65*height/9, fill='black', width=5)
+    canvas.create_oval(4.25*width/9-0.2*width/9, 2.5*height/9-0.2*width/9,
+    4.25*width/9+0.15*width/9,2.5*height/9+0.15*width/9,
+    outline='black',width=4,fill='yellow' )
+    canvas.create_oval(4.75*width/9-0.2*width/9, 2.5*height/9-0.2*width/9,
+    4.75*width/9+0.15*width/9,2.5*height/9+0.15*width/9,
+    outline='black',width=4,fill='yellow' )
+    canvas.create_rectangle(4.2*width/9,3*height/9,4.8*width/9,3.2*height/9,
+    fill='#f07928', outline='black',width=4)
+    canvas.create_rectangle(4*width/9,3.2*height/9,5*width/9,4*height/9,
+    fill='#2898f0', outline='black',width=4)
+    canvas.create_rectangle(4.12*width/9,4*height/9,4.25*width/9,4.7*height/9,
+    fill='#f07928', outline='black',width=4)
+    canvas.create_rectangle(4.88*width/9,4*height/9,4.75*width/9,4.7*height/9,
+    fill='#f07928', outline='black',width=4)
+    canvas.create_rectangle(4*width/9,4.7*height/9,4.37*width/9,4.9*height/9,
+    fill='#ff4500', outline='black',width=4)
+    canvas.create_rectangle(4.63*width/9,4.7*height/9,5*width/9,4.9*height/9,
+    fill='#ff4500', outline='black',width=4)
+    canvas.create_rectangle(3.8*width/9,3.35*height/9,4*width/9,3.5*height/9,
+    fill='#f07928', outline='black',width=4)
+    canvas.create_rectangle(5*width/9,3.35*height/9,5.2*width/9,3.5*height/9,
+    fill='#f07928', outline='black',width=4)
+    canvas.create_rectangle(5.15*width/9,3.2*height/9,5.3*width/9,4.2*height/9,
+    fill='#ff4500', outline='black',width=4)
+    canvas.create_rectangle(3.7*width/9,3.2*height/9,3.85*width/9,4.2*height/9,
+    fill='#ff4500', outline='black',width=4)
+
     # Your code goes here!
 
 #################################################
@@ -579,11 +653,11 @@ def testDrawFlagOfTheEU(app, canvas):
 
 def testDrawNiceRobot(app, canvas):
     drawNiceRobot(canvas, app.width, app.height)
-    canvas.create_text(app.width/2, app.height-20, 
-          text=('Testing drawNiceRobot' +
-            f'(canvas, {app.width}, {app.height})'))
-    canvas.create_text(app.width/2, app.height-10, 
-          text=f'''Comment out these print lines if they mess up your art!''')
+    # canvas.create_text(app.width/2, app.height-20, 
+    #       text=('Testing drawNiceRobot' +
+    #         f'(canvas, {app.width}, {app.height})'))
+    # canvas.create_text(app.width/2, app.height-10, 
+    #       text=f'''Comment out these print lines if they mess up your art!''')
 
 def drawSplashScreen(app, canvas):
     text = f'''\
@@ -631,10 +705,10 @@ def testAll():
     testTopScorer()
     testCollapseWhitespace()
     testPatternedMessage()
-    # testMastermindScore()
+    testMastermindScore()
 
     # Test all Graphics:
-    # testGraphicsFunctions()
+    testGraphicsFunctions()
 
     # Bonus:
     # testBonusTopLevelFunctionNames()

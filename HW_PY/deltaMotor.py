@@ -1,5 +1,21 @@
 import canopen
 import time
+import serial.tools.list_ports
+
+# 串口检测
+def port_check(self):
+    # 检测所有存在的串口，将信息存储在字典中
+    self.Com_Dict = {}
+    port_list = list(serial.tools.list_ports.comports())
+    
+    self.Combobox1.clear()
+    for port in port_list:
+        self.Com_Dict["%s" % port[0]] = "%s" % port[1]
+        self.Combobox1.addItem(port[0])
+        
+    # 无串口判断
+    if len(self.Com_Dict) == 0:
+        self.Combobox1.addItem("无串口")
 
 def nodeConfig():
     network = canopen.Network()
@@ -47,7 +63,7 @@ def nodeConfig():
 
 def deltaMotorTest():
     network = canopen.Network()
-    network.connect(bustype='slcan', channel='/dev/tty.usbmodem143301', bitrate=250000)
+    network.connect(bustype='slcan', channel='/dev/tty.usbmodem143101', bitrate=250000)
     deltaMotorNode = network.add_node(1,'/Users/mac/tmp/HW_PY/ASDA-A3_v04.eds')
     deltaMotorNode.nmt.state = 'OPERATIONAL'
     deltaMotorNode.sdo[0x6040].write(0x00)
@@ -67,8 +83,9 @@ def deltaMotorTest():
      
 
 if __name__ == "__main__":
-    # nodeConfig()
-    # print("please reboot your box during 10 seconds!")
-    # time.sleep(10)
-    deltaMotorTest()
+            # nodeConfig()
+            # print("please reboot your box during 10 seconds!")
+            # time.sleep(10)
+            findSerialPort()
+            # deltaMotorTest()
     
