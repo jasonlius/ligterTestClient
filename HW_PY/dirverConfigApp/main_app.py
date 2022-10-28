@@ -23,7 +23,7 @@ class MyWindow(QMainWindow, Ui_MainWindow):
     def changePort(self):
         global PortNumber
         PortNumber = self.serialcComboBox.currentText()
-        print(f"{PortNumber} has been changed!")
+        self.textBrowser.setPlainText(f"切换到串口 {PortNumber}")
 
     def changenodeId(self):
         print("port change")
