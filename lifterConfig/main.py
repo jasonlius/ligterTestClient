@@ -27,8 +27,9 @@ class MyWindow(QMainWindow, Ui_MainWindow):
         self.setupUi(self)
 
     def portChange(self):
-        print("port change")
-
+        global PortNumber
+        PortNumber = self.comboBox.currentText()
+        print(f"{PortNumber} has been changed!")
     def baudChange(self):
         print("port change")
 
