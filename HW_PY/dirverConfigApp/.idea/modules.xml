@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/驱动器自动化配置工具.iml" filepath="$PROJECT_DIR$/.idea/驱动器自动化配置工具.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/dirverConfigApp.iml" filepath="$PROJECT_DIR$/.idea/dirverConfigApp.iml" />
     </modules>
   </component>
 </project>

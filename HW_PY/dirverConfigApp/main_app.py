@@ -2,14 +2,9 @@ import sys
 import serial
 import serial.tools.list_ports
 from PyQt5.QtWidgets import QMainWindow, QApplication
-from serialPort import Ui_MainWindow
+from mainPage import Ui_MainWindow
 
 
-
-########################
-#函数区
-####################################################
-# 串口函数区
 def getPortList():
     Com_List = []
     plist = list(serial.tools.list_ports.comports())
@@ -26,18 +21,23 @@ class MyWindow(QMainWindow, Ui_MainWindow):
         super(MyWindow, self).__init__(parent)
         self.setupUi(self)
 
-    def portChange(self):
+    def changePort(self):
         global PortNumber
-        PortNumber = self.comboBox.currentText()
+        PortNumber = self.serialcComboBox.currentText()
         print(f"{PortNumber} has been changed!")
-    def baudChange(self):
+
+    def changenodeId(self):
         print("port change")
 
-    def sendBtn(self):
+    def ProtectSensor(self):
         print("port change")
 
-    def connectBtn(self):
+    def detectBaud(self):
         print("port change")
+
+    def detectNodeId(self):
+        print("port change")
+
 
 
 app = QApplication(sys.argv)
@@ -46,7 +46,7 @@ myWin.show()
 portList = getPortList()
 if portList!=[]:
     for i in range(len(portList)):
-        myWin.comboBox.addItem(portList[i])
+        myWin.serialcComboBox.addItem(portList[i])
     serialPort = portList[0]
 else:
     serialPort = None

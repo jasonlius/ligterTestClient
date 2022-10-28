@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="VcsDirectoryMappings">
+    <mapping directory="$PROJECT_DIR$" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Baize" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/HW" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/HW/Strings" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/HW/decommentproj/decomment" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/HW/decommentproj/decomment/testText" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/HW_PY/BaudAdapterDetect" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/HW_PY/SocketTest" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/HW_PY/espeak" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/HW_PY/week3" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Survey" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/TechXueXi" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/cTextbookExampleCode" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/jasonlius" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/jasonlius.github.io" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/jasonlius.github.io/docs" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/logFilterProj" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/logFilterProjcp" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/ostep-code" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/project1b" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/wejh-server" vcs="Git" />
+  </component>
+</project>

@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="cc48cf55-a04e-49e6-bd26-b4807ec828c0" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/ui/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ui/form.ui" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ui/ui.pyproject" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ui/widget.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HW" beforeDir="false" afterPath="$PROJECT_DIR$/HW" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HW/cheapterHW/a.out" beforeDir="false" afterPath="$PROJECT_DIR$/HW/cheapterHW/a.out" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HW/decommentproj/decomment" beforeDir="false" afterPath="$PROJECT_DIR$/HW/decommentproj/decomment" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HW/decommentproj/decomment/testText" beforeDir="false" afterPath="$PROJECT_DIR$/HW/decommentproj/decomment/testText" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HW/decommentproj/decomment/testText/a.out" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HW/decommentproj/decomment/testText/a.out.dSYM/Contents/Info.plist" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HW/decommentproj/decomment/testText/a.out.dSYM/Contents/Resources/DWARF/a.out" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HW/decommentproj/decomment/testText/decomment" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HW/decommentproj/decomment/testText/decomment.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HW/decommentproj/decomment/testText/error" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HW/decommentproj/decomment/testText/nano.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HW/decommentproj/decomment/testText/normal" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HW/decommentproj/decomment/testText/readme" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HW/decommentproj/decomment/testText/result" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HW/decommentproj/decomment/testText/sampledecomment" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HW/decommentproj/decomment/testText/testdecomment" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HW/decommentproj/decomment/testText/testdecommentdiff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HW_PY/BaudAdapterDetect" beforeDir="false" afterPath="$PROJECT_DIR$/HW_PY/BaudAdapterDetect" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HW_PY/BaudAdapterDetect/BaudDetect.py" beforeDir="false" afterPath="$PROJECT_DIR$/HW_PY/BaudAdapterDetect/BaudDetect.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HW_PY/SocketTest" beforeDir="false" afterPath="$PROJECT_DIR$/HW_PY/SocketTest" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HW_PY/SocketTest/UDPClient.py" beforeDir="false" afterPath="$PROJECT_DIR$/HW_PY/SocketTest/UDPClient.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cTextbookExampleCode" beforeDir="false" afterPath="$PROJECT_DIR$/cTextbookExampleCode" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cTextbookExampleCode/a.out" beforeDir="false" afterPath="$PROJECT_DIR$/cTextbookExampleCode/a.out" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cTextbookExampleCode/addfrac.c" beforeDir="false" afterPath="$PROJECT_DIR$/cTextbookExampleCode/addfrac.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cTextbookExampleCode/deal.c" beforeDir="false" afterPath="$PROJECT_DIR$/cTextbookExampleCode/deal.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cTextbookExampleCode/reverse.c" beforeDir="false" afterPath="$PROJECT_DIR$/cTextbookExampleCode/reverse.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cTextbookExampleCode/square2.c" beforeDir="false" afterPath="$PROJECT_DIR$/cTextbookExampleCode/square2.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cTextbookExampleCode/square3.c" beforeDir="false" afterPath="$PROJECT_DIR$/cTextbookExampleCode/square3.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cTextbookExampleCode/sum2.c" beforeDir="false" afterPath="$PROJECT_DIR$/cTextbookExampleCode/sum2.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jasonlius.github.io" beforeDir="false" afterPath="$PROJECT_DIR$/jasonlius.github.io" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jasonlius.github.io/docs/_pages/talks.md" beforeDir="false" afterPath="$PROJECT_DIR$/jasonlius.github.io/docs/_pages/talks.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logFilterProj" beforeDir="false" afterPath="$PROJECT_DIR$/logFilterProj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logFilterProj/logFilter.py" beforeDir="false" afterPath="$PROJECT_DIR$/logFilterProj/logFilter.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project1b" beforeDir="false" afterPath="$PROJECT_DIR$/project1b" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project1b/kv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project1b/kv.c" beforeDir="false" afterPath="$PROJECT_DIR$/project1b/kv.c" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2GhONnsmvKiWjEUHfzLQ14blL5F" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="cc48cf55-a04e-49e6-bd26-b4807ec828c0" name="Changes" comment="" />
+      <created>1666837315179</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1666837315179</updated>
+      <workItem from="1666837324536" duration="20000" />
+    </task>
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
