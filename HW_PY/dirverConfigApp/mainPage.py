@@ -89,17 +89,23 @@ class Ui_MainWindow(object):
         self.groupBox_4.setFont(font)
         self.groupBox_4.setObjectName("groupBox_4")
         self.BtnBaudDetect = QtWidgets.QPushButton(self.groupBox_4)
-        self.BtnBaudDetect.setGeometry(QtCore.QRect(50, 50, 113, 32))
+        self.BtnBaudDetect.setGeometry(QtCore.QRect(50, 90, 113, 32))
         font = QtGui.QFont()
         font.setPointSize(17)
         self.BtnBaudDetect.setFont(font)
         self.BtnBaudDetect.setObjectName("BtnBaudDetect")
         self.BtnNodeIdDetect = QtWidgets.QPushButton(self.groupBox_4)
-        self.BtnNodeIdDetect.setGeometry(QtCore.QRect(50, 90, 111, 31))
+        self.BtnNodeIdDetect.setGeometry(QtCore.QRect(50, 130, 111, 31))
         font = QtGui.QFont()
         font.setPointSize(17)
         self.BtnNodeIdDetect.setFont(font)
         self.BtnNodeIdDetect.setObjectName("BtnNodeIdDetect")
+        self.BtnTestLifter = QtWidgets.QPushButton(self.groupBox_4)
+        self.BtnTestLifter.setGeometry(QtCore.QRect(30, 50, 171, 32))
+        font = QtGui.QFont()
+        font.setPointSize(17)
+        self.BtnTestLifter.setFont(font)
+        self.BtnTestLifter.setObjectName("BtnTestLifter")
         self.groupBox_2.raise_()
         self.groupBox.raise_()
         self.groupBox_3.raise_()
@@ -120,6 +126,7 @@ class Ui_MainWindow(object):
         self.BtnBaudDetect.clicked.connect(MainWindow.detectBaud) # type: ignore
         self.BtnNodeIdDetect.clicked.connect(MainWindow.detectNodeId) # type: ignore
         self.BtnConfig.clicked.connect(MainWindow.configDriver) # type: ignore
+        self.BtnTestLifter.clicked.connect(MainWindow.testLifter) # type: ignore
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
     def retranslateUi(self, MainWindow):
@@ -136,9 +143,10 @@ class Ui_MainWindow(object):
         self.SensorDetectcomboBox.setItemText(0, _translate("MainWindow", "加保护"))
         self.SensorDetectcomboBox.setItemText(1, _translate("MainWindow", "不加保护"))
         self.BtnConfig.setText(_translate("MainWindow", "配置"))
-        self.groupBox_4.setTitle(_translate("MainWindow", "CanOpen参数检测区："))
+        self.groupBox_4.setTitle(_translate("MainWindow", "CanOpen操作区："))
         self.BtnBaudDetect.setText(_translate("MainWindow", "波特率检测"))
         self.BtnNodeIdDetect.setText(_translate("MainWindow", "NodeID检测"))
+        self.BtnTestLifter.setText(_translate("MainWindow", "启动提升机测试"))
 
 
 if __name__ == "__main__":

@@ -235,13 +235,13 @@
      </font>
     </property>
     <property name="title">
-     <string>CanOpen参数检测区：</string>
+     <string>CanOpen操作区：</string>
     </property>
     <widget class="QPushButton" name="BtnBaudDetect">
      <property name="geometry">
       <rect>
        <x>50</x>
-       <y>50</y>
+       <y>90</y>
        <width>113</width>
        <height>32</height>
       </rect>
@@ -259,7 +259,7 @@
      <property name="geometry">
       <rect>
        <x>50</x>
-       <y>90</y>
+       <y>130</y>
        <width>111</width>
        <height>31</height>
       </rect>
@@ -271,6 +271,24 @@
      </property>
      <property name="text">
       <string>NodeID检测</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="BtnTestLifter">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>50</y>
+       <width>171</width>
+       <height>32</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>17</pointsize>
+      </font>
+     </property>
+     <property name="text">
+      <string>启动提升机测试</string>
      </property>
     </widget>
    </widget>
@@ -349,7 +367,7 @@
    <hints>
     <hint type="sourcelabel">
      <x>745</x>
-     <y>487</y>
+     <y>527</y>
     </hint>
     <hint type="destinationlabel">
      <x>944</x>
@@ -365,7 +383,7 @@
    <hints>
     <hint type="sourcelabel">
      <x>731</x>
-     <y>524</y>
+     <y>564</y>
     </hint>
     <hint type="destinationlabel">
      <x>946</x>
@@ -389,6 +407,22 @@
     </hint>
    </hints>
   </connection>
+  <connection>
+   <sender>BtnTestLifter</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>testLifter()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>755</x>
+     <y>487</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>957</x>
+     <y>508</y>
+    </hint>
+   </hints>
+  </connection>
  </connections>
  <slots>
   <slot>changePort()</slot>
@@ -397,5 +431,6 @@
   <slot>detectBaud()</slot>
   <slot>detectNodeId()</slot>
   <slot>configDriver()</slot>
+  <slot>testLifter()</slot>
  </slots>
 </ui>
