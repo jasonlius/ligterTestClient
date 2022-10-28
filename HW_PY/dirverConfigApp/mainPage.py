@@ -13,7 +13,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
-        MainWindow.setObjectName("MainWindowMainWindow")
+        MainWindow.setObjectName("MainWindow")
         MainWindow.resize(989, 723)
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
@@ -76,6 +76,12 @@ class Ui_MainWindow(object):
         self.SensorDetectcomboBox.setObjectName("SensorDetectcomboBox")
         self.SensorDetectcomboBox.addItem("")
         self.SensorDetectcomboBox.addItem("")
+        self.BtnConfig = QtWidgets.QPushButton(self.groupBox_3)
+        self.BtnConfig.setGeometry(QtCore.QRect(70, 130, 81, 31))
+        font = QtGui.QFont()
+        font.setPointSize(17)
+        self.BtnConfig.setFont(font)
+        self.BtnConfig.setObjectName("BtnConfig")
         self.groupBox_4 = QtWidgets.QGroupBox(self.centralwidget)
         self.groupBox_4.setGeometry(QtCore.QRect(640, 390, 251, 191))
         font = QtGui.QFont()
@@ -113,11 +119,12 @@ class Ui_MainWindow(object):
         self.SensorDetectcomboBox.activated['QString'].connect(MainWindow.ProtectSensor) # type: ignore
         self.BtnBaudDetect.clicked.connect(MainWindow.detectBaud) # type: ignore
         self.BtnNodeIdDetect.clicked.connect(MainWindow.detectNodeId) # type: ignore
+        self.BtnConfig.clicked.connect(MainWindow.configDriver) # type: ignore
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
-        MainWindow.setWindowTitle(_translate("MainWindow", "提升机驱动器配置工具"))
+        MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
         self.label.setText(_translate("MainWindow", "配置信息显示"))
         self.groupBox_2.setTitle(_translate("MainWindow", "串口设置区："))
         self.label_2.setText(_translate("MainWindow", "选串口"))
@@ -128,6 +135,7 @@ class Ui_MainWindow(object):
         self.label_6.setText(_translate("MainWindow", "保护传感器"))
         self.SensorDetectcomboBox.setItemText(0, _translate("MainWindow", "加保护"))
         self.SensorDetectcomboBox.setItemText(1, _translate("MainWindow", "不加保护"))
+        self.BtnConfig.setText(_translate("MainWindow", "配置"))
         self.groupBox_4.setTitle(_translate("MainWindow", "CanOpen参数检测区："))
         self.BtnBaudDetect.setText(_translate("MainWindow", "波特率检测"))
         self.BtnNodeIdDetect.setText(_translate("MainWindow", "NodeID检测"))

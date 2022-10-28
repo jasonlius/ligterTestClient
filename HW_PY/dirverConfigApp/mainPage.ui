@@ -201,6 +201,24 @@
       </property>
      </item>
     </widget>
+    <widget class="QPushButton" name="BtnConfig">
+     <property name="geometry">
+      <rect>
+       <x>70</x>
+       <y>130</y>
+       <width>81</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>17</pointsize>
+      </font>
+     </property>
+     <property name="text">
+      <string>配置</string>
+     </property>
+    </widget>
    </widget>
    <widget class="QGroupBox" name="groupBox_4">
     <property name="geometry">
@@ -355,6 +373,22 @@
     </hint>
    </hints>
   </connection>
+  <connection>
+   <sender>BtnConfig</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>configDriver()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>481</x>
+     <y>571</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>516</x>
+     <y>659</y>
+    </hint>
+   </hints>
+  </connection>
  </connections>
  <slots>
   <slot>changePort()</slot>
@@ -362,5 +396,6 @@
   <slot>ProtectSensor()</slot>
   <slot>detectBaud()</slot>
   <slot>detectNodeId()</slot>
+  <slot>configDriver()</slot>
  </slots>
 </ui>
