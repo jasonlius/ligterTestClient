@@ -15,6 +15,9 @@ class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
         MainWindow.resize(989, 723)
+        font = QtGui.QFont()
+        font.setFamily("Academy Engraved LET")
+        MainWindow.setFont(font)
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
         self.groupBox = QtWidgets.QGroupBox(self.centralwidget)
@@ -89,23 +92,29 @@ class Ui_MainWindow(object):
         self.groupBox_4.setFont(font)
         self.groupBox_4.setObjectName("groupBox_4")
         self.BtnBaudDetect = QtWidgets.QPushButton(self.groupBox_4)
-        self.BtnBaudDetect.setGeometry(QtCore.QRect(50, 90, 113, 32))
+        self.BtnBaudDetect.setGeometry(QtCore.QRect(130, 130, 113, 32))
         font = QtGui.QFont()
         font.setPointSize(17)
         self.BtnBaudDetect.setFont(font)
         self.BtnBaudDetect.setObjectName("BtnBaudDetect")
         self.BtnNodeIdDetect = QtWidgets.QPushButton(self.groupBox_4)
-        self.BtnNodeIdDetect.setGeometry(QtCore.QRect(50, 130, 111, 31))
+        self.BtnNodeIdDetect.setGeometry(QtCore.QRect(10, 130, 111, 31))
         font = QtGui.QFont()
         font.setPointSize(17)
         self.BtnNodeIdDetect.setFont(font)
         self.BtnNodeIdDetect.setObjectName("BtnNodeIdDetect")
         self.BtnTestLifter = QtWidgets.QPushButton(self.groupBox_4)
-        self.BtnTestLifter.setGeometry(QtCore.QRect(30, 50, 171, 32))
+        self.BtnTestLifter.setGeometry(QtCore.QRect(40, 90, 171, 32))
         font = QtGui.QFont()
         font.setPointSize(17)
         self.BtnTestLifter.setFont(font)
         self.BtnTestLifter.setObjectName("BtnTestLifter")
+        self.lineEdit = QtWidgets.QLineEdit(self.groupBox_4)
+        self.lineEdit.setGeometry(QtCore.QRect(70, 60, 113, 21))
+        self.lineEdit.setObjectName("lineEdit")
+        self.label_3 = QtWidgets.QLabel(self.groupBox_4)
+        self.label_3.setGeometry(QtCore.QRect(90, 40, 91, 20))
+        self.label_3.setObjectName("label_3")
         self.groupBox_2.raise_()
         self.groupBox.raise_()
         self.groupBox_3.raise_()
@@ -127,6 +136,7 @@ class Ui_MainWindow(object):
         self.BtnNodeIdDetect.clicked.connect(MainWindow.detectNodeId) # type: ignore
         self.BtnConfig.clicked.connect(MainWindow.configDriver) # type: ignore
         self.BtnTestLifter.clicked.connect(MainWindow.testLifter) # type: ignore
+        self.lineEdit.textChanged['QString'].connect(MainWindow.inputRotationValue) # type: ignore
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
     def retranslateUi(self, MainWindow):
@@ -147,6 +157,7 @@ class Ui_MainWindow(object):
         self.BtnBaudDetect.setText(_translate("MainWindow", "波特率检测"))
         self.BtnNodeIdDetect.setText(_translate("MainWindow", "NodeID检测"))
         self.BtnTestLifter.setText(_translate("MainWindow", "启动提升机测试"))
+        self.label_3.setText(_translate("MainWindow", "旋转量输入:"))
 
 
 if __name__ == "__main__":

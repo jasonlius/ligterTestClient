@@ -10,6 +10,11 @@
     <height>723</height>
    </rect>
   </property>
+  <property name="font">
+   <font>
+    <family>Academy Engraved LET</family>
+   </font>
+  </property>
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
@@ -240,8 +245,8 @@
     <widget class="QPushButton" name="BtnBaudDetect">
      <property name="geometry">
       <rect>
-       <x>50</x>
-       <y>90</y>
+       <x>130</x>
+       <y>130</y>
        <width>113</width>
        <height>32</height>
       </rect>
@@ -258,7 +263,7 @@
     <widget class="QPushButton" name="BtnNodeIdDetect">
      <property name="geometry">
       <rect>
-       <x>50</x>
+       <x>10</x>
        <y>130</y>
        <width>111</width>
        <height>31</height>
@@ -276,8 +281,8 @@
     <widget class="QPushButton" name="BtnTestLifter">
      <property name="geometry">
       <rect>
-       <x>30</x>
-       <y>50</y>
+       <x>40</x>
+       <y>90</y>
        <width>171</width>
        <height>32</height>
       </rect>
@@ -289,6 +294,29 @@
      </property>
      <property name="text">
       <string>启动提升机测试</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="lineEdit">
+     <property name="geometry">
+      <rect>
+       <x>70</x>
+       <y>60</y>
+       <width>113</width>
+       <height>21</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_3">
+     <property name="geometry">
+      <rect>
+       <x>90</x>
+       <y>40</y>
+       <width>91</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>旋转量输入:</string>
      </property>
     </widget>
    </widget>
@@ -366,8 +394,8 @@
    <slot>detectBaud()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>745</x>
-     <y>527</y>
+     <x>825</x>
+     <y>567</y>
     </hint>
     <hint type="destinationlabel">
      <x>944</x>
@@ -414,12 +442,28 @@
    <slot>testLifter()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>755</x>
-     <y>487</y>
+     <x>765</x>
+     <y>527</y>
     </hint>
     <hint type="destinationlabel">
      <x>957</x>
      <y>508</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>lineEdit</sender>
+   <signal>textChanged(QString)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>inputRotationValue()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>767</x>
+     <y>492</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>941</x>
+     <y>451</y>
     </hint>
    </hints>
   </connection>
@@ -432,5 +476,6 @@
   <slot>detectNodeId()</slot>
   <slot>configDriver()</slot>
   <slot>testLifter()</slot>
+  <slot>inputRotationValue()</slot>
  </slots>
 </ui>

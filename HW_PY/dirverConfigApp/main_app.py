@@ -79,7 +79,7 @@ def testLifter(portNumber):
         deltaMotorNode.sdo[0x6040].write(0x80)
         deltaMotorNode.sdo[0x6040].write(0x00)
         deltaMotorNode.sdo[0x6060].write(0x01)
-        deltaMotorNode.sdo[0x607A].write(100000000)
+        deltaMotorNode.sdo[0x607A].write(RotationValue)
         deltaMotorNode.sdo[0x6081].write(4000000)
         deltaMotorNode.sdo[0x6040].write(0)
         deltaMotorNode.sdo[0x6040].write(0x06)
@@ -139,6 +139,13 @@ class MyWindow(QMainWindow, Ui_MainWindow):
     def testLifter(self):
         testLifter(PortNumber)
 
+    def inputRotationValue(self):
+        global  RotationValue
+        try:
+            RotationValue = int(self.lineEdit.text())
+        except Exception:
+            mainUI.textBrowser.append("错误，请输入数字")
+        print(RotationValue)
     def refresh(self):
         port_list = self.get_port_list()
         num = len(port_list)
